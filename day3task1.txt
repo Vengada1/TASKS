@@ -1,0 +1,136 @@
+JSON ITERATE OVER LOOPS:
+JSON stands for JavaScript Object Notation. It’s a light format for storing and transferring data from one place to another. So in looping, it is one of the most commonly used techniques for transporting data that is the array format or in attribute values.
+Types of Loops and Their Uses:-
+Now let’s have a look at different types of Loops and their uses. We shall discuss the “While” Loop, the “Do While Loop” and the “The ForEach() Loop”.
+
+1. The “While” Loop
+A While Loop also doesn’t have a counter and only runs if the specified condition is true.  Here’s an example demonstrating the while loop where the loop runs till infinity:
+
+
+var infiniteValue = true;
+while (infiniteValue) {
+   console.log("Infinite")
+}
+‍
+
+2. Do While Loop
+In this loop, there’s a defined condition that needs to be checked at the end of the process.Here’s how you can use the Do While Loop in order to loop through XML(Extensible Markup Language).
+There may be times where you feel you need to make a loop through the array of JSON objects in JavaScript. However, you no longer need to worry about this, as it can be done using an array of numbers, strings, or objects. There are numerous ways of looping in JavaScript and throughout this article we’ll help you grasp them.
+
+There are a few types of ways to categorize the loops in JavaScript. These are essential to know as they play a significant role in understanding the concept.
+
+Categories of Loops in JavaScript
+The ‘For’ Loop
+The For Loop comes first because of its simplicity and ease of use. It is a very user-friendly kind of loop that runs with a method of using a counter. 
+
+The value is first set with an appropriate condition, which is also called ‘initializing a loop’. Next, the terminal or final value is specified. The For Loop makes things really easy when you need to run a set of codes multiple times.
+
+The For Loop is further divided into:‍
+
+1. Using an array
+The following piece of code is a perfect example of how to use a for loop through an array. 
+
+{% code-block language="js" %}
+var numbers = [ 10, 20, 30, 40, 50] 
+for (var i=0; i < numbers.length; i++) {
+   console.log(numbers[i])
+}
+‍
+Here, I have used all the numbers in the form of an array, then printed each of them in a console window. In the same way, you can make a loop through an array of strings.
+
+2. Making a loop through DOM elements
+The For loop can also be used to alter colors. Consider a situation where you want to choose a particular color for all the anchors of your page. In order to do so, use the following piece of code.
+ {% code-block language="js" %}
+var elements = document.querySelectorAll("a");
+for (var i=0; i<elements.length; i++) {
+   elements[i].style.color = "red";
+}
+‍
+
+Looping Using JSON
+JSON stands for JavaScript Object Notation. It’s a light format for storing and transferring data from one place to another. So in looping, it is one of the most commonly used techniques for transporting data that is the array format or in attribute values. 
+
+Here’s an example that demonstrates the above concept.
+
+jsonData ={
+   one: [11, 12, 13, 14, 15],
+   two: [21, 22, 23],
+   three: [31, 32]
+}
+
+JavaScript Object Notation also consists of a root, namely, the jsonData. It further contains three nodes that are called, “one”, “two”, and “three”. 
+
+Here’s how you can withdraw a piece of information from JSON:
+
+var json = {
+   one: [11, 12, 13, 14, 15],
+   two: [21, 22, 23],
+   three: [31, 32]
+}
+};
+for(var key in json.jsonData) {
+   for (var key1 in json.jsonData[key]) {
+       console.log(json.jsonData[key][key1])
+   }
+}
+
+Above, I used two For In Loops to make use of JSON and extract information from it. One of those loops is the outer loop that runs three times. If you’re wondering why it needs to run three times, that’s because it has to cover the above-mentioned nodes.
+
+The second loop is the inner loop which is meant to cover all the internal values. These internal values are those which are inside the three nodes. Once you run the code, you will get these kinds of results:
+
+
+JSON Explained
+If we go further in depth, there are a few more things you need to know about JSON.  The code that we just ran can also be expressed by including ‘[]’ to contain the above three nodes.
+
+Here’s how it’s done:
+
+jsonData:  [
+   one: [11, 12, 13, 14, 15],
+   two: [21, 22, 23],
+   three: [31, 32]
+]
+
+Then, in the following piece of code, a blend of the two looping techniques of For and For In are used to withdraw all the information from JSON.
+
+var json = {
+   jsonData:  [
+       {one: [11, 12, 13, 14, 15]},
+       {two: [21, 22, 23]},
+       {three: [31, 32]}
+   ]
+}; 
+for (var i=0; i<json.jsonData.length; i++) {
+   for (var key in json.jsonData[i]) {
+       for (var j= 0; j<json.jsonData[i][key].length; j++) {
+           console.log(json.jsonData[i][key][j])
+       }
+   }
+}
+‍
+
+Types of Loops and Their Uses
+Now let’s have a look at different types of Loops and their uses. We shall discuss the “While” Loop, the “Do While Loop” and the “The ForEach() Loop”.‍
+
+1. The “While” Loop
+A While Loop also doesn’t have a counter and only runs if the specified condition is true.  Here’s an example demonstrating the while loop where the loop runs till infinity:
+
+var infiniteValue = true;
+while (infiniteValue) {
+   console.log("Infinite")
+}
+
+
+2. Do While Loop
+In this loop, there’s a defined condition that needs to be checked at the end of the process.
+
+Here’s how you can use the Do While Loop in order to loop through XML(Extensible Markup Language):
+
+
+
+3. The ForEach() Loop:-
+This method is used for looping through an array element. Here’s an example of this:
+var names = ["jerry", "tom", "pluto", "micky", "mini"];
+names.forEach(function1);
+function function1(currentValue, index) {
+   console.log("Index in array is: "+index + " ::  Value is: "+currentValue);
+}
