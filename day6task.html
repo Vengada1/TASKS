@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // task 1.
+          class Person{
+             constructor(name,age,place,region,nationality,gender,diet){
+                this.name=name,
+                this.age=age,
+                this.place=place
+                this.region
+                this.nationality
+                this.gender
+                this.diet
+             }
+        }
+        var newUser=new Person("Abhi",24,"Chennai","TN","Indian","Female","Vegan")
+        console.log(newUser)
+
+        // task 2.
+        class Uberprice{
+                constructor(km){
+                    this.km=km,
+                    this.p=km*30
+
+                }
+                getPrice(){
+                   return `Actual Price of Trip is Rs.${this.p}` 
+                }
+
+                applyDiscount(){
+                  var discount=(this.p*25/100)
+                  console.log(`Discounted money is Rs.${discount}`)
+                  var discountedPrice=this.p-discount
+                  return`Price After Discount is Rs.${discountedPrice}`
+                }
+            }
+            var trip1=new Uberprice(2)
+                console.log(trip1.getPrice())
+            console.log(trip1.applyDiscount())
+    </script>
+</body>
+</html>
